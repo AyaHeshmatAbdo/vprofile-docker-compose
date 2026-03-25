@@ -1,6 +1,7 @@
 
 services:
   vprodb:
+    build: ./db
     image: db01:V1.1
     container_name: db01
     ports:
@@ -9,6 +10,7 @@ services:
       - db_vol:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=vprodbpass
+      
   vprocache01:
     image: memcached:latest
     container_name: mc01
@@ -32,7 +34,9 @@ services:
       - RABBITMQ_DEFAULT_PASS=guest
     depends_on:
       - vprocache01
+      
   vproapp:
+    build: ./app
     image: app:V1.0
     container_name: app01
     ports:
@@ -43,6 +47,7 @@ services:
       vpromq01:
         condition: service_healthy
   vproweb:
+    build: ./web
     image: web:V1.0
     container_name: web01
     ports:
