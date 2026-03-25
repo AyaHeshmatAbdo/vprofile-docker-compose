@@ -32,7 +32,7 @@ This project demonstrates a complete multi-tier application deployment using Doc
 ### 1. Clone repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/vprofile-docker-compose.git
+git clone https://github.com/AyaHeshmatAbdo/vprofile-docker-compose.git
 cd vprofile-docker-compose
 ```
 
@@ -68,9 +68,3 @@ docker-compose up -d --build
 * The application WAR file is built using Maven inside Docker.
 * Database is initialized using `db_backup.sql`.
 * Nginx acts as a reverse proxy for the application.
-
----
-
-## 👨‍💻 Author
-
-Ahmed Salem
